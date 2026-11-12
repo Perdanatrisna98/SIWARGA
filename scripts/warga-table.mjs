@@ -1,0 +1,31 @@
+export const WARGA_TABLE_SQL = `
+  CREATE TABLE IF NOT EXISTS warga (
+    id INT UNSIGNED NOT NULL AUTO_INCREMENT,
+    nik CHAR(16) NOT NULL,
+    kk CHAR(16) NULL,
+    name VARCHAR(100) NOT NULL,
+    gender ENUM('L', 'P') NOT NULL,
+    birth_place VARCHAR(100) NOT NULL,
+    birth_date DATE NOT NULL,
+    religion VARCHAR(30) NOT NULL DEFAULT 'Islam',
+    marital_status ENUM('belum-menikah', 'menikah', 'cerai-hidup', 'cerai-mati') NOT NULL DEFAULT 'belum-menikah',
+    education VARCHAR(50) NULL,
+    occupation VARCHAR(100) NULL,
+    family_relation ENUM('kepala-keluarga', 'istri', 'anak', 'lainnya') NOT NULL DEFAULT 'kepala-keluarga',
+    phone VARCHAR(20) NULL,
+    address VARCHAR(255) NOT NULL,
+    rt VARCHAR(3) NOT NULL,
+    rw VARCHAR(3) NOT NULL,
+    status ENUM('aktif', 'pindah', 'meninggal') NOT NULL DEFAULT 'aktif',
+    user_id INT UNSIGNED NULL,
+    edit_requested_at TIMESTAMP NULL DEFAULT NULL,
+    created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    PRIMARY KEY (id),
+    UNIQUE KEY uq_warga_nik (nik),
+    UNIQUE KEY uq_warga_user (user_id),
+    KEY idx_warga_name (name),
+    KEY idx_warga_rt_rw (rt, rw),
+    KEY idx_warga_status (status)
+  ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci
+`;
