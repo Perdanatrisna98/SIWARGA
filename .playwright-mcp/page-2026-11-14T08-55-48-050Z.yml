@@ -1,0 +1,110 @@
+- generic [active] [ref=f14e1]:
+  - generic [ref=f14e2]:
+    - complementary [ref=f14e3]:
+      - generic [ref=f14e6]:
+        - img "Logo SIWARGA" [ref=f14e8]
+        - generic [ref=f14e9]:
+          - generic [ref=f14e10]: SIWARGA
+          - generic [ref=f14e11]: Sistem Informasi Administrasi Warga
+      - navigation [ref=f14e13]:
+        - paragraph [ref=f14e14]: Menu utama
+        - link "Dashboard" [ref=f14e15] [cursor=pointer]:
+          - /url: /dashboard/admin
+        - link "Manajemen Pengguna" [ref=f14e21] [cursor=pointer]:
+          - /url: /dashboard/admin/pengguna
+        - link "Data Warga" [ref=f14e29] [cursor=pointer]:
+          - /url: /dashboard/admin/warga
+        - link "Keuangan & Iuran" [ref=f14e37] [cursor=pointer]:
+          - /url: /dashboard/admin/keuangan
+        - generic "Segera hadir" [ref=f14e44]:
+          - generic [ref=f14e48]: Layanan Administrasi
+          - generic [ref=f14e49]: Segera
+      - generic [ref=f14e51]:
+        - generic [ref=f14e52]:
+          - generic [ref=f14e53]: A
+          - generic [ref=f14e54]:
+            - paragraph [ref=f14e55]: Administrator
+            - paragraph [ref=f14e56]: admin@siwarga.com
+        - button "Keluar" [ref=f14e58] [cursor=pointer]
+    - generic [ref=f14e62]:
+      - banner [ref=f14e63]:
+        - generic [ref=f14e64]:
+          - generic [ref=f14e66]:
+            - paragraph [ref=f14e67]: Dashboard
+            - paragraph [ref=f14e68]: Administrator
+          - generic [ref=f14e69]:
+            - generic [ref=f14e70]: Admin
+            - generic [ref=f14e74]:
+              - generic [ref=f14e75]: A
+              - generic [ref=f14e76]:
+                - paragraph [ref=f14e77]: Administrator
+                - paragraph [ref=f14e78]: admin@siwarga.com
+      - main [ref=f14e79]:
+        - generic [ref=f14e224]:
+          - generic [ref=f14e226]:
+            - link "Kembali ke Iuran" [ref=f14e227] [cursor=pointer]:
+              - /url: /dashboard/admin/iuran
+            - paragraph [ref=f14e230]: Keuangan & Iuran
+            - heading "Verifikasi Pembayaran" [level=1] [ref=f14e231]
+            - paragraph [ref=f14e232]: Periksa bukti pembayaran sebelum mengubah status menjadi lunas. Setelah diverifikasi, pemasukan kas dan kuitansi dibuat otomatis.
+          - generic [ref=f14e234]:
+            - generic [ref=f14e235]:
+              - generic [ref=f14e236]:
+                - term [ref=f14e237]: Warga
+                - definition [ref=f14e238]: Uji Pembayaran
+                - definition [ref=f14e239]: "9999999999999999"
+              - generic [ref=f14e240]:
+                - term [ref=f14e241]: Iuran
+                - definition [ref=f14e242]: Iuran Pembangunan Masjid (Uji)
+                - definition [ref=f14e243]: November 2026
+              - generic [ref=f14e244]:
+                - term [ref=f14e245]: Nominal
+                - definition [ref=f14e246]: Rp 50.000
+                - definition [ref=f14e247]: Jatuh tempo 28 Nov 2026
+              - generic [ref=f14e248]:
+                - term [ref=f14e249]: Wilayah
+                - definition [ref=f14e250]: RW 009 / RT 009
+            - generic [ref=f14e251]:
+              - generic [ref=f14e252]: Menunggu verifikasi
+              - generic [ref=f14e256]: Metode Transfer Bank
+              - generic [ref=f14e257]: Diajukan 14 Nov 2026, 15.55
+          - generic [ref=f14e259]:
+            - generic [ref=f14e260]:
+              - generic [ref=f14e261]:
+                - paragraph [ref=f14e262]: Tagihan
+                - paragraph [ref=f14e263]: Iuran Pembangunan Masjid (Uji) — November 2026
+                - paragraph [ref=f14e264]: Rp 50.000
+                - paragraph [ref=f14e265]: Uji Pembayaran • RW 009 / RT 009
+              - generic [ref=f14e266]:
+                - paragraph [ref=f14e267]: Pengajuan pembayaran warga
+                - paragraph [ref=f14e268]: "Metode: Transfer Bank • 14 Nov 2026, 15.55"
+                - paragraph [ref=f14e269]: "Catatan: Transfer BCA a/n Uji"
+              - generic [ref=f14e270]:
+                - paragraph [ref=f14e271]: Metode Pembayaran
+                - combobox [ref=f14e272]:
+                  - option "Tunai (ke RT/RW)"
+                  - option "Transfer Bank" [selected]
+                  - option "QRIS"
+                - paragraph [ref=f14e273]: Untuk pembayaran tunai, pilih tunai lalu unggah foto tanda terima.
+              - generic [ref=f14e274]:
+                - paragraph [ref=f14e275]: Bukti dari warga
+                - link [ref=f14e276] [cursor=pointer]:
+                  - /url: /uploads/bukti/37f840e4-814f-443e-adde-c49a44c1bbd9.png
+                  - img "Bukti pembayaran warga" [ref=f14e277]
+              - generic [ref=f14e278]:
+                - generic [ref=f14e279]: Unggah Bukti (opsional, mengganti bukti lama)
+                - generic [ref=f14e280] [cursor=pointer]:
+                  - generic [ref=f14e285]: Pilih file bukti
+                  - generic [ref=f14e286]: JPG, PNG, WEBP, atau PDF. Maksimal 5 MB.
+                - button "Unggah Bukti (opsional, mengganti bukti lama) Pilih file bukti JPG, PNG, WEBP, atau PDF. Maksimal 5 MB." [ref=f14e287]
+            - generic [ref=f14e288]:
+              - link "Batal" [ref=f14e289] [cursor=pointer]:
+                - /url: /dashboard/admin/iuran
+              - button "Verifikasi & Tandai Lunas" [ref=f14e290] [cursor=pointer]
+          - generic [ref=f14e294]:
+            - generic [ref=f14e295]:
+              - heading "Tolak pengajuan pembayaran" [level=2] [ref=f14e296]
+              - paragraph [ref=f14e297]: Status kembali menjadi belum dibayar dan bukti yang diunggah warga dihapus. Gunakan jika bukti tidak valid.
+            - button "Tolak pengajuan" [ref=f14e298] [cursor=pointer]
+  - button "Open Next.js Dev Tools" [ref=f14e219] [cursor=pointer]
+  - alert [ref=f14e223]: Verifikasi Pembayaran

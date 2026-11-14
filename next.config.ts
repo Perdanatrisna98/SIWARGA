@@ -21,6 +21,9 @@ const allowedDevOrigins = [
 const nextConfig: NextConfig = {
   experimental: {
     agentFeedback: true,
+    serverActions: {
+      bodySizeLimit: "6mb",
+    },
   },
   allowedDevOrigins,
 };

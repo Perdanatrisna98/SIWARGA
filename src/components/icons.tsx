@@ -2,6 +2,7 @@ import type { SVGProps } from "react";
 
 export type IconName =
   | "arrowRight"
+  | "bank"
   | "building"
   | "chart"
   | "check"
@@ -20,14 +21,19 @@ export type IconName =
   | "megaphone"
   | "pencil"
   | "plus"
+  | "printer"
+  | "qr"
+  | "receipt"
   | "search"
   | "settings"
   | "shield"
   | "sparkles"
   | "trash"
+  | "upload"
   | "user"
   | "userPlus"
   | "users"
+  | "wallet"
   | "x";
 
 const paths: Record<IconName, React.ReactNode> = {
@@ -35,6 +41,12 @@ const paths: Record<IconName, React.ReactNode> = {
     <>
       <path d="M5 12h14" />
       <path d="m13 6 6 6-6 6" />
+    </>
+  ),
+  bank: (
+    <>
+      <path d="m3 9 9-5 9 5H3Z" />
+      <path d="M4 9v9M9 9v9M15 9v9M20 9v9M2.5 21h19" />
     </>
   ),
   building: (
@@ -132,6 +144,27 @@ const paths: Record<IconName, React.ReactNode> = {
     </>
   ),
   plus: <path d="M12 5v14M5 12h14" />,
+  printer: (
+    <>
+      <path d="M6 9V3h12v6" />
+      <path d="M6 18H4a2 2 0 0 1-2-2v-4a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v4a2 2 0 0 1-2 2h-2" />
+      <path d="M6 14h12v7H6z" />
+    </>
+  ),
+  qr: (
+    <>
+      <rect x="3" y="3" width="7" height="7" rx="1" />
+      <rect x="14" y="3" width="7" height="7" rx="1" />
+      <rect x="3" y="14" width="7" height="7" rx="1" />
+      <path d="M14 14h3v3h-3zM20 14h1M14 20h1M18 20h3v1" />
+    </>
+  ),
+  receipt: (
+    <>
+      <path d="M6 3h12a1 1 0 0 1 1 1v17l-3-2-2 2-2-2-2 2-2-2-3 2V4a1 1 0 0 1 1-1Z" />
+      <path d="M9 8h6M9 12h6M9 16h4" />
+    </>
+  ),
   search: (
     <>
       <circle cx="11" cy="11" r="7" />
@@ -165,6 +198,13 @@ const paths: Record<IconName, React.ReactNode> = {
       <path d="M10 11v6M14 11v6" />
     </>
   ),
+  upload: (
+    <>
+      <path d="M12 16V4" />
+      <path d="m7 9 5-5 5 5" />
+      <path d="M4 16v3a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-3" />
+    </>
+  ),
   user: (
     <>
       <circle cx="12" cy="8" r="4" />
@@ -182,6 +222,12 @@ const paths: Record<IconName, React.ReactNode> = {
       <circle cx="9" cy="8" r="3.5" />
       <path d="M2.5 20a6.5 6.5 0 0 1 13 0" />
       <path d="M16 5.2a3.5 3.5 0 0 1 0 5.6M18 14.4a6.5 6.5 0 0 1 3.5 5.6" />
+    </>
+  ),
+  wallet: (
+    <>
+      <path d="M20 8H5a2 2 0 0 1 0-4h13v4" />
+      <path d="M20 8a2 2 0 0 1 2 2v3h-4a2 2 0 0 0 0 4h4v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V6" />
     </>
   ),
   x: <path d="m6 6 12 12M18 6 6 18" />,

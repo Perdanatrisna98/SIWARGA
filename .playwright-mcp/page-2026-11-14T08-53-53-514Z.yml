@@ -1,0 +1,81 @@
+- generic [active] [ref=f11e1]:
+  - generic [ref=f11e2]:
+    - complementary [ref=f11e3]:
+      - generic [ref=f11e6]:
+        - img "Logo SIWARGA" [ref=f11e8]
+        - generic [ref=f11e9]:
+          - generic [ref=f11e10]: SIWARGA
+          - generic [ref=f11e11]: Sistem Informasi Administrasi Warga
+      - navigation [ref=f11e13]:
+        - paragraph [ref=f11e14]: Menu utama
+        - link "Dashboard" [ref=f11e15] [cursor=pointer]:
+          - /url: /dashboard/admin
+        - link "Manajemen Pengguna" [ref=f11e21] [cursor=pointer]:
+          - /url: /dashboard/admin/pengguna
+        - link "Data Warga" [ref=f11e29] [cursor=pointer]:
+          - /url: /dashboard/admin/warga
+        - link "Keuangan & Iuran" [ref=f11e37] [cursor=pointer]:
+          - /url: /dashboard/admin/keuangan
+        - generic "Segera hadir" [ref=f11e44]:
+          - generic [ref=f11e48]: Layanan Administrasi
+          - generic [ref=f11e49]: Segera
+      - generic [ref=f11e51]:
+        - generic [ref=f11e52]:
+          - generic [ref=f11e53]: A
+          - generic [ref=f11e54]:
+            - paragraph [ref=f11e55]: Administrator
+            - paragraph [ref=f11e56]: admin@siwarga.com
+        - button "Keluar" [ref=f11e58] [cursor=pointer]
+    - generic [ref=f11e62]:
+      - banner [ref=f11e63]:
+        - generic [ref=f11e64]:
+          - generic [ref=f11e66]:
+            - paragraph [ref=f11e67]: Dashboard
+            - paragraph [ref=f11e68]: Administrator
+          - generic [ref=f11e69]:
+            - generic [ref=f11e70]: Admin
+            - generic [ref=f11e74]:
+              - generic [ref=f11e75]: A
+              - generic [ref=f11e76]:
+                - paragraph [ref=f11e77]: Administrator
+                - paragraph [ref=f11e78]: admin@siwarga.com
+      - main [ref=f11e79]:
+        - generic [ref=f11e81]:
+          - generic [ref=f11e82]:
+            - link "Kembali ke Iuran" [ref=f11e83] [cursor=pointer]:
+              - /url: /dashboard/admin/iuran
+            - generic [ref=f11e86]:
+              - paragraph [ref=f11e87]: Keuangan & Iuran
+              - heading "Buat Tagihan Iuran" [level=1] [ref=f11e88]
+              - paragraph [ref=f11e89]: Buat tagihan untuk seluruh warga aktif pada cakupan wilayah jenis iuran. Tagihan ganda pada periode yang sama otomatis dilewati.
+          - generic [ref=f11e91]:
+            - generic [ref=f11e92]:
+              - generic [ref=f11e93]:
+                - heading "Buat Tagihan" [level=2] [ref=f11e94]
+                - paragraph [ref=f11e95]: Tagihan dibuat otomatis untuk semua warga aktif pada cakupan wilayah jenis iuran yang dipilih.
+              - generic [ref=f11e96]:
+                - generic [ref=f11e97]:
+                  - generic [ref=f11e98]: Jenis Iuran *
+                  - combobox "Jenis Iuran *" [ref=f11e99]:
+                    - option "Iuran Pembangunan Masjid (Uji) — Rp 50.000" [selected]
+                - generic [ref=f11e100]:
+                  - generic [ref=f11e101]: Periode *
+                  - textbox "Periode *" [ref=f11e102]: 2026-11
+                  - paragraph [ref=f11e103]: Tagihan untuk November 2026.
+                - generic [ref=f11e104]:
+                  - generic [ref=f11e105]: Jatuh Tempo *
+                  - textbox "Jatuh Tempo *" [ref=f11e106]: 2026-11-28
+                - generic [ref=f11e107]:
+                  - generic [ref=f11e108]: Catatan
+                  - textbox "Catatan" [ref=f11e109]:
+                    - /placeholder: "Opsional, misalnya: dibayar paling lambat akhir bulan"
+              - generic [ref=f11e110]:
+                - generic [ref=f11e111]:
+                  - generic [ref=f11e112]: Iuran Pembangunan Masjid (Uji)
+                  - generic [ref=f11e113]: 1 warga aktif
+                - paragraph [ref=f11e114]: "Total potensi tagihan: Rp 50.000. Tagihan yang sudah pernah dibuat untuk periode yang sama akan dilewati."
+            - generic [ref=f11e115]:
+              - link "Batal" [ref=f11e116] [cursor=pointer]:
+                - /url: /dashboard/admin/iuran
+              - button "Buat Tagihan" [ref=f11e117] [cursor=pointer]
+  - button "Open Next.js Dev Tools" [ref=f11e126] [cursor=pointer]

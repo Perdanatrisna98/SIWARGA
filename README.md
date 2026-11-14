@@ -25,6 +25,17 @@ MySQL, dan autentikasi berbasis cookie sesi (JWT).
   satu kali tanpa harus ditambahkan RT lebih dahulu.
 - Setelah pengisian pertama, data warga terkunci. Warga dapat mengirim permintaan
   perubahan, lalu **RT/RW** meninjau dan mengedit data tersebut.
+- Kelola keuangan dan iuran untuk **Admin**, **RT**, dan **RW**:
+  - Catat kas pemasukan/pengeluaran beserta kategori, wilayah, dan keterangan.
+  - Ringkasan saldo, total pemasukan, total pengeluaran, dan jumlah transaksi.
+  - Kuitansi kas yang dapat dicetak untuk setiap transaksi.
+  - Kelola jenis iuran (bulanan/sekali), nominal, dan cakupan wilayah.
+  - Buat tagihan otomatis untuk seluruh warga aktif pada periode tertentu.
+  - Verifikasi pembayaran iuran; pemasukan kas dan kuitansi dibuat otomatis.
+  - Batalkan verifikasi bila terjadi kekeliruan; transaksi kas terkait ikut
+    dihapus.
+- Akun **Warga** dapat memantau tagihan iuran sendiri, melihat status
+  pembayaran, dan mencetak kuitansi yang sudah diverifikasi pengurus.
 
 ## Prasyarat
 
@@ -55,15 +66,13 @@ Sesuaikan `DB_HOST`, `DB_PORT`, `DB_USER`, `DB_PASSWORD`, dan `DB_NAME` pada
 dengan nilai acak yang panjang sebelum digunakan di production. Jika aplikasi
 diakses melalui HTTPS, set `AUTH_COOKIE_SECURE=true`.
 
-## Akun Demo
+## Akun Utama
 
 Dibuat otomatis oleh `npm run db:init`:
 
-| Role  | Email               | Password | Wilayah         |
-| ----- | ------------------- | -------- | --------------- |
-| Admin | `admin@siwarga.com` | `123456` | Semua wilayah   |
-| RT    | `rt@siwarga.com`    | `123456` | RW 001 / RT 001 |
-| RW    | `rw@siwarga.com`    | `123456` | RW 001          |
+| Role  | Email               | Password | Wilayah       |
+| ----- | ------------------- | -------- | ------------- |
+| Admin | `admin@siwarga.com` | `123456` | Semua wilayah |
 
 Akun **Warga** dibuat melalui halaman `/register` dan otomatis mendapat role
 `warga`. Setelah login, warga melengkapi data kependudukannya melalui menu
@@ -81,6 +90,7 @@ akun RT/RW melalui menu **Manajemen Pengguna**.
 | `npm run db:init`     | Membuat database, tabel `users`/`warga`, dan akun demo  |
 | `npm run db:warga`    | Membuat/menyiapkan tabel `warga` + kolom profil mandiri |
 | `npm run db:pengguna` | Menambah kolom wilayah `rw`/`rt` pada tabel `users`     |
+| `npm run db:keuangan` | Membuat tabel keuangan, jenis iuran, dan tagihan iuran  |
 
 ## Struktur Singkat
 
@@ -88,23 +98,40 @@ akun RT/RW melalui menu **Manajemen Pengguna**.
 scripts/init-db.mjs             Inisialisasi database & seed akun
 scripts/init-warga.mjs          Membuat tabel warga saja
 scripts/init-pengguna.mjs       Migrasi kolom wilayah pada tabel users
+scripts/init-keuangan.mjs       Membuat tabel keuangan & iuran
+scripts/keuangan-table.mjs      Definisi SQL tabel keuangan & iuran
 scripts/users-region.mjs        Skema users & migrasi wilayah
 scripts/warga-table.mjs         Definisi SQL tabel warga
 src/app/(auth)/                 Halaman login dan register
 src/app/dashboard/              Layout dan dashboard per role
 src/app/dashboard/[role]/warga/ Halaman CRUD data warga
+src/app/dashboard/[role]/keuangan/ Halaman kas dan kuitansi kas
+src/app/dashboard/[role]/iuran/ Halaman iuran, verifikasi, jenis, kuitansi
+src/app/dashboard/warga/iuran/  Halaman iuran & kuitansi untuk warga
 src/app/dashboard/[role]/profil/ Halaman profil mandiri warga
 src/app/dashboard/[role]/pengguna/ Halaman manajemen pengguna (admin)
 src/components/warga-form.tsx   Form tambah/edit data warga
 src/components/pengguna-form.tsx Form tambah/edit pengguna
+src/components/keuangan-form.tsx Form catat/edit transaksi kas
+src/components/iuran-jenis-form.tsx Form jenis iuran
+src/components/generate-tagihan-form.tsx Form buat tagihan iuran
 src/lib/actions/auth.ts         Server action login, register, logout
 src/lib/actions/warga.ts        Server action CRUD data warga
 src/lib/actions/warga-profile.ts Server action profil mandiri warga
 src/lib/actions/pengguna.ts     Server action CRUD pengguna
+src/lib/actions/keuangan.ts     Server action transaksi kas
+src/lib/actions/iuran.ts        Server action iuran & verifikasi bayar
 src/lib/warga.ts                Query data warga
+src/lib/keuangan.ts             Query transaksi kas
+src/lib/iuran.ts                Query jenis iuran & tagihan
 src/lib/warga-access.ts         Aturan akses wilayah data warga
+src/lib/keuangan-access.ts      Aturan akses pengelola keuangan
 src/lib/warga-validation.ts     Validasi input data warga
+src/lib/keuangan-validation.ts  Validasi input transaksi kas
+src/lib/iuran-validation.ts     Validasi jenis iuran & tagihan
 src/lib/warga-types.ts          Tipe & label data warga
+src/lib/keuangan-types.ts       Tipe & label keuangan
+src/lib/iuran-types.ts          Tipe & label iuran
 src/lib/pengguna.ts             Query data pengguna
 src/lib/pengguna-types.ts       Tipe data pengguna
 src/lib/auth.ts                 Helper sesi server (validasi ke database)
@@ -130,3 +157,9 @@ Untuk database yang sudah ada sebelum fitur profil mandiri warga, jalankan
 `edit_requested_at` pada tabel `warga` tanpa menghapus data warga yang sudah
 ada. Setelah itu akun warga dapat mengisi profilnya sekali melalui menu
 **Profil Saya**; perubahan berikutnya dilakukan oleh RT/RW sesuai wilayah.
+
+Untuk database yang sudah ada sebelum fitur keuangan dan iuran, jalankan
+`npm run db:keuangan`. Perintah ini membuat tabel `keuangan_transaksi`,
+`iuran_jenis`, dan `iuran_tagihan` tanpa mengubah data yang sudah ada. Setelah
+itu menu **Keuangan & Iuran** tersedia untuk Admin, RT, dan RW, sedangkan warga
+dapat membuka menu **Iuran Saya**.

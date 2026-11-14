@@ -1,0 +1,111 @@
+- generic [active] [ref=f13e1]:
+  - generic [ref=f13e2]:
+    - complementary [ref=f13e3]:
+      - generic [ref=f13e6]:
+        - img "Logo SIWARGA" [ref=f13e8]
+        - generic [ref=f13e9]:
+          - generic [ref=f13e10]: SIWARGA
+          - generic [ref=f13e11]: Sistem Informasi Administrasi Warga
+      - navigation [ref=f13e13]:
+        - paragraph [ref=f13e14]: Menu utama
+        - link "Dashboard" [ref=f13e15] [cursor=pointer]:
+          - /url: /dashboard/warga
+        - link "Profil Saya" [ref=f13e21] [cursor=pointer]:
+          - /url: /dashboard/warga/profil
+        - link "Iuran Saya" [ref=f13e28] [cursor=pointer]:
+          - /url: /dashboard/warga/iuran
+        - generic "Segera hadir" [ref=f13e35]:
+          - generic [ref=f13e39]: Ajukan Layanan
+          - generic [ref=f13e40]: Segera
+        - generic "Segera hadir" [ref=f13e41]:
+          - generic [ref=f13e45]: Pengumuman
+          - generic [ref=f13e46]: Segera
+      - generic [ref=f13e48]:
+        - generic [ref=f13e49]:
+          - generic [ref=f13e50]: U
+          - generic [ref=f13e51]:
+            - paragraph [ref=f13e52]: Uji Pembayaran
+            - paragraph [ref=f13e53]: uji.bayar@siwarga.local
+            - paragraph [ref=f13e54]: RW 009 / RT 009
+        - button "Keluar" [ref=f13e56] [cursor=pointer]
+    - generic [ref=f13e60]:
+      - banner [ref=f13e61]:
+        - generic [ref=f13e62]:
+          - generic [ref=f13e64]:
+            - paragraph [ref=f13e65]: Dashboard
+            - paragraph [ref=f13e66]: Warga
+          - generic [ref=f13e67]:
+            - generic [ref=f13e68]: Warga
+            - generic [ref=f13e72]:
+              - generic [ref=f13e73]: U
+              - generic [ref=f13e74]:
+                - paragraph [ref=f13e75]: Uji Pembayaran
+                - paragraph [ref=f13e76]: uji.bayar@siwarga.local
+      - main [ref=f13e77]:
+        - generic [ref=f13e79]:
+          - generic [ref=f13e81]:
+            - generic [ref=f13e82]:
+              - paragraph [ref=f13e83]: Iuran Saya
+              - heading "Tagihan & Kuitansi Iuran" [level=1] [ref=f13e84]
+              - paragraph [ref=f13e85]: Bayar iuran dengan tunai, transfer, atau QRIS. Setelah pengurus memverifikasi, kuitansi dapat diunduh di sini.
+              - generic [ref=f13e86]: RW 009 / RT 009
+            - link "Profil Saya" [ref=f13e91] [cursor=pointer]:
+              - /url: /dashboard/warga/profil
+          - generic [ref=f13e95]:
+            - generic [ref=f13e97]:
+              - generic [ref=f13e98]: "1"
+              - paragraph [ref=f13e104]: Total tagihan
+            - generic [ref=f13e106]:
+              - generic [ref=f13e107]: "0"
+              - paragraph [ref=f13e112]: Sudah dibayar
+            - generic [ref=f13e114]:
+              - generic [ref=f13e115]: "0"
+              - paragraph [ref=f13e121]: Menunggu verifikasi
+            - generic [ref=f13e123]:
+              - generic [ref=f13e124]: "1"
+              - paragraph [ref=f13e130]: Belum dibayar
+            - generic [ref=f13e132]:
+              - generic [ref=f13e133]: Rp 50.000
+              - paragraph [ref=f13e139]: Total tunggakan
+          - generic [ref=f13e141]:
+            - link "Semua" [ref=f13e142] [cursor=pointer]:
+              - /url: /dashboard/warga/iuran
+            - link "Belum dibayar" [ref=f13e143] [cursor=pointer]:
+              - /url: /dashboard/warga/iuran?status=belum
+            - link "Menunggu verifikasi" [ref=f13e144] [cursor=pointer]:
+              - /url: /dashboard/warga/iuran?status=menunggu
+            - link "Lunas" [ref=f13e145] [cursor=pointer]:
+              - /url: /dashboard/warga/iuran?status=lunas
+          - generic [ref=f13e147]:
+            - generic [ref=f13e149]:
+              - heading "Daftar Tagihan" [level=2] [ref=f13e150]
+              - paragraph [ref=f13e151]: 1 tagihan untuk Uji Pembayaran.
+            - table [ref=f13e153]:
+              - rowgroup [ref=f13e154]:
+                - row [ref=f13e155]:
+                  - columnheader "Iuran" [ref=f13e156]
+                  - columnheader "Periode" [ref=f13e157]
+                  - columnheader "Nominal" [ref=f13e158]
+                  - columnheader "Jatuh Tempo" [ref=f13e159]
+                  - columnheader "Status" [ref=f13e160]
+                  - columnheader "Aksi" [ref=f13e161]
+              - rowgroup [ref=f13e162]:
+                - row [ref=f13e163]:
+                  - cell [ref=f13e164]:
+                    - paragraph [ref=f13e165]: Iuran Pembangunan Masjid (Uji)
+                    - paragraph [ref=f13e166]: Iuran bulanan
+                  - cell "November 2026" [ref=f13e167]
+                  - cell "Rp 50.000" [ref=f13e168]
+                  - cell "28 Nov 2026" [ref=f13e169]
+                  - cell "Belum dibayar" [ref=f13e170]
+                  - cell [ref=f13e172]:
+                    - link "Bayar" [ref=f13e173] [cursor=pointer]:
+                      - /url: /dashboard/warga/iuran/2/bayar
+            - generic [ref=f13e177]:
+              - paragraph [ref=f13e178]: Halaman 1 dari 1
+              - generic [ref=f13e179]:
+                - link "Sebelumnya" [disabled]:
+                  - /url: /dashboard/warga/iuran
+                - link "Berikutnya" [disabled]:
+                  - /url: /dashboard/warga/iuran?page=2
+  - button "Open Next.js Dev Tools" [ref=f13e185] [cursor=pointer]

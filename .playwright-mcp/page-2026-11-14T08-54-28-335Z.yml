@@ -1,0 +1,36 @@
+- generic [active] [ref=f12e1]:
+  - button "Open Next.js Dev Tools" [ref=f12e210] [cursor=pointer]
+  - alert [ref=f12e214]: Selamat Datang
+  - generic [ref=f12e215]:
+    - complementary [ref=f12e216]:
+      - img "Suasana lingkungan perumahan warga" [ref=f12e217]
+      - generic [ref=f12e219]:
+        - heading "Layanan Digital Warga" [level=2] [ref=f12e221]
+        - paragraph [ref=f12e223]: Akses pengurusan surat digital, pemantauan CCTV lingkungan, hingga transparansi iuran warga dalam satu genggaman.
+    - main [ref=f12e224]:
+      - generic [ref=f12e225]:
+        - link "Logo SIWARGA SIWARGA" [ref=f12e227] [cursor=pointer]:
+          - /url: /
+          - generic [ref=f12e228]:
+            - img "Logo SIWARGA" [ref=f12e229]
+            - generic [ref=f12e230]: SIWARGA
+        - generic [ref=f12e233]:
+          - generic [ref=f12e234]:
+            - heading "Selamat Datang" [level=1] [ref=f12e235]
+            - paragraph [ref=f12e236]: Silakan masuk untuk mengakses layanan warga.
+          - generic [ref=f12e237]:
+            - generic [ref=f12e238]:
+              - generic [ref=f12e239]: Email
+              - textbox "Email" [ref=f12e241]:
+                - /placeholder: Masukkan Email
+            - generic [ref=f12e243]:
+              - generic [ref=f12e244]: Password
+              - generic [ref=f12e245]:
+                - textbox "Password" [ref=f12e246]:
+                  - /placeholder: Masukkan password Anda
+                - button "Tampilkan password" [ref=f12e247] [cursor=pointer]
+            - button "Masuk Sekarang" [ref=f12e253] [cursor=pointer]
+          - paragraph [ref=f12e257]:
+            - text: Belum Punya Akun?
+            - link "Daftar di sini." [ref=f12e258] [cursor=pointer]:
+              - /url: /register

@@ -1,0 +1,93 @@
+- generic [active] [ref=f13e1]:
+  - generic [ref=f13e2]:
+    - complementary [ref=f13e3]:
+      - generic [ref=f13e6]:
+        - img "Logo SIWARGA" [ref=f13e8]
+        - generic [ref=f13e9]:
+          - generic [ref=f13e10]: SIWARGA
+          - generic [ref=f13e11]: Sistem Informasi Administrasi Warga
+      - navigation [ref=f13e13]:
+        - paragraph [ref=f13e14]: Menu utama
+        - link "Dashboard" [ref=f13e15] [cursor=pointer]:
+          - /url: /dashboard/warga
+        - link "Profil Saya" [ref=f13e21] [cursor=pointer]:
+          - /url: /dashboard/warga/profil
+        - link "Iuran Saya" [ref=f13e28] [cursor=pointer]:
+          - /url: /dashboard/warga/iuran
+        - generic "Segera hadir" [ref=f13e35]:
+          - generic [ref=f13e39]: Ajukan Layanan
+          - generic [ref=f13e40]: Segera
+        - generic "Segera hadir" [ref=f13e41]:
+          - generic [ref=f13e45]: Pengumuman
+          - generic [ref=f13e46]: Segera
+      - generic [ref=f13e48]:
+        - generic [ref=f13e49]:
+          - generic [ref=f13e50]: U
+          - generic [ref=f13e51]:
+            - paragraph [ref=f13e52]: Uji Pembayaran
+            - paragraph [ref=f13e53]: uji.bayar@siwarga.local
+            - paragraph [ref=f13e54]: RW 009 / RT 009
+        - button "Keluar" [ref=f13e56] [cursor=pointer]
+    - generic [ref=f13e60]:
+      - banner [ref=f13e61]:
+        - generic [ref=f13e62]:
+          - generic [ref=f13e64]:
+            - paragraph [ref=f13e65]: Dashboard
+            - paragraph [ref=f13e66]: Warga
+          - generic [ref=f13e67]:
+            - generic [ref=f13e68]: Warga
+            - generic [ref=f13e72]:
+              - generic [ref=f13e73]: U
+              - generic [ref=f13e74]:
+                - paragraph [ref=f13e75]: Uji Pembayaran
+                - paragraph [ref=f13e76]: uji.bayar@siwarga.local
+      - main [ref=f13e77]:
+        - generic [ref=f13e190]:
+          - generic [ref=f13e192]:
+            - link "Kembali ke Iuran Saya" [ref=f13e193] [cursor=pointer]:
+              - /url: /dashboard/warga/iuran
+            - paragraph [ref=f13e196]: Bayar Iuran
+            - heading "Pilih Metode Pembayaran" [level=1] [ref=f13e197]
+            - paragraph [ref=f13e198]: Bayar tunai melalui pengurus RT/RW, atau transfer/QRIS lalu unggah bukti pembayaran. Jatuh tempo 28 Nov 2026.
+          - generic [ref=f13e200]:
+            - generic [ref=f13e201]:
+              - generic [ref=f13e202]:
+                - paragraph [ref=f13e203]: Tagihan
+                - paragraph [ref=f13e204]: Iuran Pembangunan Masjid (Uji) — November 2026
+                - paragraph [ref=f13e205]: Rp 50.000
+              - generic [ref=f13e206]:
+                - paragraph [ref=f13e207]: Metode Pembayaran *
+                - generic [ref=f13e208]:
+                  - generic [ref=f13e209] [cursor=pointer]:
+                    - radio "Tunai (ke RT/RW) Serahkan uang ke pengurus RT/RW. Pengurus akan mencatat dan mengunggah bukti penerimaan." [ref=f13e210]
+                    - generic [ref=f13e215]:
+                      - generic [ref=f13e216]: Tunai (ke RT/RW)
+                      - generic [ref=f13e217]: Serahkan uang ke pengurus RT/RW. Pengurus akan mencatat dan mengunggah bukti penerimaan.
+                  - generic [ref=f13e218] [cursor=pointer]:
+                    - radio "Transfer Bank Transfer ke rekening resmi RT/RW, lalu unggah bukti transfer." [checked] [ref=f13e219]
+                    - generic [ref=f13e224]:
+                      - generic [ref=f13e225]: Transfer Bank
+                      - generic [ref=f13e226]: Transfer ke rekening resmi RT/RW, lalu unggah bukti transfer.
+                  - generic [ref=f13e227] [cursor=pointer]:
+                    - radio "QRIS Scan QRIS resmi RT/RW, lalu unggah bukti pembayaran." [ref=f13e228]
+                    - generic [ref=f13e235]:
+                      - generic [ref=f13e236]: QRIS
+                      - generic [ref=f13e237]: Scan QRIS resmi RT/RW, lalu unggah bukti pembayaran.
+              - paragraph [ref=f13e239]:
+                - generic [ref=f13e243]: Hubungi pengurus RT/RW untuk detail rekening atau QRIS resmi, lalu unggah bukti pembayaran.
+              - generic [ref=f13e244]:
+                - generic [ref=f13e245]: Bukti Pembayaran *
+                - generic [ref=f13e246] [cursor=pointer]:
+                  - generic [ref=f13e251]: Pilih file bukti pembayaran
+                  - generic [ref=f13e252]: JPG, PNG, WEBP, atau PDF. Maksimal 5 MB.
+                - button "Bukti Pembayaran * Pilih file bukti pembayaran JPG, PNG, WEBP, atau PDF. Maksimal 5 MB." [ref=f13e253]
+              - generic [ref=f13e254]:
+                - generic [ref=f13e255]: Catatan (opsional)
+                - textbox "Catatan (opsional)" [ref=f13e256]:
+                  - /placeholder: "Contoh: transfer dari rekening BCA a/n ..."
+            - generic [ref=f13e257]:
+              - link "Batal" [ref=f13e258] [cursor=pointer]:
+                - /url: /dashboard/warga/iuran
+              - button "Ajukan Pembayaran" [ref=f13e259] [cursor=pointer]
+  - button "Open Next.js Dev Tools" [ref=f13e185] [cursor=pointer]
+  - alert [ref=f13e189]: Bayar Iuran — SIWARGA

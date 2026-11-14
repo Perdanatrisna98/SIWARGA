@@ -1,0 +1,109 @@
+- generic [active] [ref=f12e1]:
+  - generic [ref=f12e2]:
+    - complementary [ref=f12e3]:
+      - generic [ref=f12e6]:
+        - img "Logo SIWARGA" [ref=f12e8]
+        - generic [ref=f12e9]:
+          - generic [ref=f12e10]: SIWARGA
+          - generic [ref=f12e11]: Sistem Informasi Administrasi Warga
+      - navigation [ref=f12e13]:
+        - paragraph [ref=f12e14]: Menu utama
+        - link "Dashboard" [ref=f12e15] [cursor=pointer]:
+          - /url: /dashboard/admin
+        - link "Manajemen Pengguna" [ref=f12e21] [cursor=pointer]:
+          - /url: /dashboard/admin/pengguna
+        - link "Data Warga" [ref=f12e29] [cursor=pointer]:
+          - /url: /dashboard/admin/warga
+        - link "Keuangan & Iuran" [ref=f12e37] [cursor=pointer]:
+          - /url: /dashboard/admin/keuangan
+        - generic "Segera hadir" [ref=f12e44]:
+          - generic [ref=f12e48]: Layanan Administrasi
+          - generic [ref=f12e49]: Segera
+      - generic [ref=f12e51]:
+        - generic [ref=f12e52]:
+          - generic [ref=f12e53]: A
+          - generic [ref=f12e54]:
+            - paragraph [ref=f12e55]: Administrator
+            - paragraph [ref=f12e56]: admin@siwarga.com
+        - button "Keluar" [ref=f12e58] [cursor=pointer]
+    - generic [ref=f12e62]:
+      - banner [ref=f12e63]:
+        - generic [ref=f12e64]:
+          - generic [ref=f12e66]:
+            - paragraph [ref=f12e67]: Dashboard
+            - paragraph [ref=f12e68]: Administrator
+          - generic [ref=f12e69]:
+            - generic [ref=f12e70]: Admin
+            - generic [ref=f12e74]:
+              - generic [ref=f12e75]: A
+              - generic [ref=f12e76]:
+                - paragraph [ref=f12e77]: Administrator
+                - paragraph [ref=f12e78]: admin@siwarga.com
+      - main [ref=f12e79]:
+        - generic [ref=f12e81]:
+          - generic [ref=f12e84]:
+            - generic [ref=f12e85]: Administrator
+            - heading "Selamat datang, Administrator" [level=1] [ref=f12e89]
+            - paragraph [ref=f12e90]: Kelola pengguna, data warga, dan seluruh layanan administrasi SIWARGA dari satu tempat.
+            - generic [ref=f12e91]:
+              - generic [ref=f12e92]: Sabtu, 14 November 2026
+              - generic [ref=f12e97]: Pusat kendali sistem
+          - generic [ref=f12e102]:
+            - generic [ref=f12e103]:
+              - generic [ref=f12e104]:
+                - generic [ref=f12e105]:
+                  - heading "Modul Administrator" [level=2] [ref=f12e106]
+                  - paragraph [ref=f12e107]: Akses cepat ke modul SIWARGA sesuai hak akses Anda.
+                - generic [ref=f12e108]: 3 modul aktif
+              - generic [ref=f12e109]:
+                - link [ref=f12e111] [cursor=pointer]:
+                  - /url: /dashboard/admin/pengguna
+                  - generic [ref=f12e112]: Buka
+                  - heading "Manajemen Pengguna" [level=3] [ref=f12e121]
+                  - paragraph [ref=f12e122]: Kelola akun admin, RT, RW, dan warga.
+                - link [ref=f12e124] [cursor=pointer]:
+                  - /url: /dashboard/admin/warga
+                  - generic [ref=f12e125]: Buka
+                  - heading "Data Warga" [level=3] [ref=f12e134]
+                  - paragraph [ref=f12e135]: Pusat data kependudukan seluruh wilayah.
+                - link [ref=f12e137] [cursor=pointer]:
+                  - /url: /dashboard/admin/keuangan
+                  - generic [ref=f12e138]: Buka
+                  - heading "Keuangan & Iuran" [level=3] [ref=f12e146]
+                  - paragraph [ref=f12e147]: Catat kas, buat tagihan iuran, dan verifikasi bayar.
+                - generic [ref=f12e149]:
+                  - generic [ref=f12e150]: Segera
+                  - heading "Layanan Administrasi" [level=3] [ref=f12e156]
+                  - paragraph [ref=f12e157]: Pantau seluruh pengajuan surat dan layanan.
+            - complementary [ref=f12e158]:
+              - generic [ref=f12e160]:
+                - heading "Informasi akun" [level=2] [ref=f12e161]
+                - generic [ref=f12e162]:
+                  - generic [ref=f12e163]: A
+                  - paragraph [ref=f12e164]: Administrator
+                  - paragraph [ref=f12e165]: admin@siwarga.com
+                  - generic [ref=f12e166]: Administrator
+                - generic [ref=f12e170]:
+                  - generic [ref=f12e171]:
+                    - term [ref=f12e172]: Status akun
+                    - definition [ref=f12e173]: Aktif
+                  - generic [ref=f12e175]:
+                    - term [ref=f12e176]: Hak akses
+                    - definition [ref=f12e177]: Admin
+                  - generic [ref=f12e178]:
+                    - term [ref=f12e179]: Wilayah
+                    - definition [ref=f12e180]: Semua wilayah
+                  - generic [ref=f12e181]:
+                    - term [ref=f12e182]: Sistem
+                    - definition [ref=f12e183]: SIWARGA
+              - generic [ref=f12e190]:
+                - paragraph [ref=f12e191]: Sesi Anda aman
+                - paragraph [ref=f12e192]: Gunakan tombol Keluar setelah selesai agar akun tetap terlindungi.
+          - generic [ref=f12e194]:
+            - generic [ref=f12e195]:
+              - heading "Aktivitas terbaru" [level=2] [ref=f12e196]
+              - generic [ref=f12e197]: Belum ada data
+            - generic [ref=f12e198]:
+              - heading "Belum ada aktivitas" [level=3] [ref=f12e203]
+              - paragraph [ref=f12e204]: Ringkasan aktivitas dan data terbaru akan tampil di sini setelah modul SIWARGA mulai digunakan.
+  - button "Open Next.js Dev Tools" [ref=f12e210] [cursor=pointer]

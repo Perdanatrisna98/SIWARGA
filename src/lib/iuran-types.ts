@@ -6,12 +6,22 @@ export const IURAN_PERIOD_LABELS: Record<IuranPeriod, string> = {
   sekali: "Sekali",
 };
 
-export const IURAN_STATUSES = ["belum", "lunas"] as const;
+export const IURAN_STATUSES = ["belum", "menunggu", "lunas"] as const;
 export type IuranStatus = (typeof IURAN_STATUSES)[number];
 
 export const IURAN_STATUS_LABELS: Record<IuranStatus, string> = {
   belum: "Belum dibayar",
+  menunggu: "Menunggu verifikasi",
   lunas: "Lunas",
+};
+
+export const IURAN_PAYMENT_METHODS = ["cash", "transfer", "qris"] as const;
+export type IuranPaymentMethod = (typeof IURAN_PAYMENT_METHODS)[number];
+
+export const IURAN_PAYMENT_METHOD_LABELS: Record<IuranPaymentMethod, string> = {
+  cash: "Tunai (ke RT/RW)",
+  transfer: "Transfer Bank",
+  qris: "QRIS",
 };
 
 export type IuranJenisRecord = {
@@ -37,8 +47,14 @@ export type IuranTagihanRecord = {
   amount: number;
   due_date: string;
   status: IuranStatus;
+  payment_method: IuranPaymentMethod | null;
+  proof_path: string | null;
+  submitted_at: string | null;
+  submitted_note: string | null;
+  rejection_reason: string | null;
   paid_at: string | null;
   paid_by: number | null;
+  paid_by_name?: string | null;
   transaksi_id: number | null;
   note: string | null;
   rw: string;
@@ -58,6 +74,7 @@ export type WargaOption = {
 export type IuranStats = {
   total: number;
   paid: number;
+  pending: number;
   unpaid: number;
   overdue: number;
   paidAmount: number;
@@ -93,6 +110,15 @@ export function isIuranStatus(value: unknown): value is IuranStatus {
   );
 }
 
+export function isIuranPaymentMethod(
+  value: unknown,
+): value is IuranPaymentMethod {
+  return (
+    typeof value === "string" &&
+    (IURAN_PAYMENT_METHODS as readonly string[]).includes(value)
+  );
+}
+
 export function isValidPeriode(value: string, period: IuranPeriod): boolean {
   if (period === "bulanan") {
     return /^\d{4}-(0[1-9]|1[0-2])$/.test(value);
@@ -108,6 +134,31 @@ export function formatPeriode(value: string): string {
   }
 
   return value;
+}
+
+export function currentPeriode(period: IuranPeriod): string {
+  const now = new Date();
+  const year = String(now.getFullYear());
+
+  if (period === "sekali") return year;
+
+  return `${year}-${String(now.getMonth() + 1).padStart(2, "0")}`;
+}
+
+export function makeIuranReceiptNumber(
+  id: number,
+  paidAt?: string | null,
+): string {
+  const year = paidAt?.slice(0, 4) || String(new Date().getFullYear());
+  return `INV/IURAN/${year}/${String(id).padStart(4, "0")}`;
+}
+
+export function makeKeuanganReceiptNumber(
+  id: number,
+  date?: string | null,
+): string {
+  const year = date?.slice(0, 4) || String(new Date().getFullYear());
+  return `KW/KAS/${year}/${String(id).padStart(4, "0")}`;
 }
 
 export function formatIuranDate(value: string | null): string {
@@ -147,7 +198,7 @@ export function isOverdue(
   dueDate: string,
   status: IuranStatus,
 ): boolean {
-  if (status === "lunas") return false;
+  if (status !== "belum") return false;
 
   const today = new Date();
   const todayIso = [
@@ -158,3 +209,5 @@ export function isOverdue(
 
   return dueDate < todayIso;
 }
+
+export { formatRupiah } from "./keuangan-types";

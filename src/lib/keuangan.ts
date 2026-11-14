@@ -21,6 +21,7 @@ type KeuanganRow = RowDataPacket & {
   rw: string;
   rt: string | null;
   created_by: number | null;
+  created_by_name: string | null;
 };
 
 export type ListKeuanganParams = {
@@ -34,15 +35,16 @@ export type ListKeuanganParams = {
 };
 
 const SELECT_COLUMNS = `
-  id,
-  transaction_type,
-  category,
-  description,
-  amount,
-  DATE_FORMAT(transaction_date, '%Y-%m-%d') AS transaction_date,
-  rw,
-  rt,
-  created_by
+  k.id,
+  k.transaction_type,
+  k.category,
+  k.description,
+  k.amount,
+  DATE_FORMAT(k.transaction_date, '%Y-%m-%d') AS transaction_date,
+  k.rw,
+  k.rt,
+  k.created_by,
+  u.name AS created_by_name
 `;
 
 function mapRow(row: KeuanganRow): KeuanganRecord {
@@ -56,6 +58,7 @@ function mapRow(row: KeuanganRow): KeuanganRecord {
     rw: row.rw,
     rt: row.rt,
     created_by: row.created_by ? Number(row.created_by) : null,
+    created_by_name: row.created_by_name ?? null,
   };
 }
 
@@ -67,12 +70,12 @@ function buildAccessFilter(access: WargaAccess) {
     conditions.push("1 = 0");
   } else {
     if (access.rw) {
-      conditions.push("rw = ?");
+      conditions.push("k.rw = ?");
       values.push(access.rw);
     }
 
     if (access.rt) {
-      conditions.push("rt = ?");
+      conditions.push("k.rt = ?");
       values.push(access.rt);
     }
   }
@@ -89,27 +92,27 @@ function buildFilters(params: ListKeuanganParams) {
 
   if (q) {
     const like = `%${q}%`;
-    conditions.push("(description LIKE ? OR category LIKE ?)");
+    conditions.push("(k.description LIKE ? OR k.category LIKE ?)");
     values.push(like, like);
   }
 
   if (isKeuanganType(params.type)) {
-    conditions.push("transaction_type = ?");
+    conditions.push("k.transaction_type = ?");
     values.push(params.type);
   }
 
   if (isKategoriKeuangan(params.category)) {
-    conditions.push("category = ?");
+    conditions.push("k.category = ?");
     values.push(params.category);
   }
 
   if (params.from) {
-    conditions.push("transaction_date >= ?");
+    conditions.push("k.transaction_date >= ?");
     values.push(params.from);
   }
 
   if (params.to) {
-    conditions.push("transaction_date <= ?");
+    conditions.push("k.transaction_date <= ?");
     values.push(params.to);
   }
 
@@ -125,7 +128,7 @@ export async function listKeuangan(params: ListKeuanganParams) {
 
   const [countRows] = await pool.execute<
     (RowDataPacket & { total: number | string })[]
-  >(`SELECT COUNT(*) AS total FROM keuangan_transaksi ${where}`, values);
+  >(`SELECT COUNT(*) AS total FROM keuangan_transaksi k ${where}`, values);
 
   const total = Number(countRows[0]?.total ?? 0);
   const totalPages = Math.max(1, Math.ceil(total / pageSize));
@@ -133,8 +136,10 @@ export async function listKeuangan(params: ListKeuanganParams) {
   const offset = (page - 1) * pageSize;
 
   const [rows] = await pool.execute<KeuanganRow[]>(
-    `SELECT ${SELECT_COLUMNS} FROM keuangan_transaksi ${where}
-     ORDER BY transaction_date DESC, id DESC
+    `SELECT ${SELECT_COLUMNS} FROM keuangan_transaksi k
+     LEFT JOIN users u ON u.id = k.created_by
+     ${where}
+     ORDER BY k.transaction_date DESC, k.id DESC
      LIMIT ? OFFSET ?`,
     [...values, pageSize, offset],
   );
@@ -153,11 +158,12 @@ export async function getKeuanganById(
   access: WargaAccess,
 ): Promise<KeuanganRecord | null> {
   const scope = buildAccessFilter(access);
-  const conditions = ["id = ?", ...scope.conditions];
+  const conditions = ["k.id = ?", ...scope.conditions];
   const values: (string | number)[] = [id, ...scope.values];
 
   const [rows] = await pool.execute<KeuanganRow[]>(
-    `SELECT ${SELECT_COLUMNS} FROM keuangan_transaksi
+    `SELECT ${SELECT_COLUMNS} FROM keuangan_transaksi k
+     LEFT JOIN users u ON u.id = k.created_by
      WHERE ${conditions.join(" AND ")} LIMIT 1`,
     values,
   );
@@ -182,10 +188,10 @@ export async function getKeuanganStats(
     })[]
   >(
     `SELECT
-       COALESCE(SUM(CASE WHEN transaction_type = 'pemasukan' THEN amount ELSE 0 END), 0) AS income,
-       COALESCE(SUM(CASE WHEN transaction_type = 'pengeluaran' THEN amount ELSE 0 END), 0) AS expense,
+       COALESCE(SUM(CASE WHEN k.transaction_type = 'pemasukan' THEN k.amount ELSE 0 END), 0) AS income,
+       COALESCE(SUM(CASE WHEN k.transaction_type = 'pengeluaran' THEN k.amount ELSE 0 END), 0) AS expense,
        COUNT(*) AS total
-     FROM keuangan_transaksi ${where}`,
+     FROM keuangan_transaksi k ${where}`,
     scope.values,
   );
 

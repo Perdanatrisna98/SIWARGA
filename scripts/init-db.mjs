@@ -1,4 +1,3 @@
-import fs from "node:fs";
 import mysql from "mysql2/promise";
 import bcrypt from "bcryptjs";
 import {
@@ -7,15 +6,7 @@ import {
 } from "./users-region.mjs";
 import { WARGA_TABLE_SQL } from "./warga-table.mjs";
 import { KEUANGAN_TABLE_STATEMENTS } from "./keuangan-table.mjs";
-
-// Muat .env.local bila ada (Node 20.12+)
-if (fs.existsSync(".env.local")) {
-  try {
-    process.loadEnvFile(".env.local");
-  } catch {
-    // abaikan, gunakan nilai default di bawah
-  }
-}
+import "./load-env.mjs";
 
 const DB_NAME = process.env.DB_NAME || "siwarga_v2";
 const DEFAULT_PASSWORD = "123456";
@@ -50,20 +41,6 @@ try {
       rw: null,
       rt: null,
     },
-    {
-      name: "Pengurus RT",
-      email: "rt@siwarga.com",
-      role: "rt",
-      rw: "001",
-      rt: "001",
-    },
-    {
-      name: "Pengurus RW",
-      email: "rw@siwarga.com",
-      role: "rw",
-      rw: "001",
-      rt: null,
-    },
   ];
 
   const passwordHash = await bcrypt.hash(DEFAULT_PASSWORD, 10);
@@ -88,6 +65,22 @@ try {
       ],
     );
   }
+
+  const keepEmails = accounts.map((account) => account.email);
+  const keepPlaceholders = keepEmails.map(() => "?").join(", ");
+
+  // Buang akun lain agar hanya ada satu akun utama (admin)
+  await connection.execute(
+    `UPDATE warga
+        SET user_id = NULL
+      WHERE user_id IS NOT NULL
+        AND user_id NOT IN (SELECT id FROM (SELECT id FROM users WHERE email IN (${keepPlaceholders})) AS keep_users)`,
+    keepEmails,
+  );
+  await connection.execute(
+    `DELETE FROM users WHERE email NOT IN (${keepPlaceholders})`,
+    keepEmails,
+  );
 
   console.log(`Database "${DB_NAME}" siap.`);
   console.log(`Tabel "users", "warga", "keuangan", dan "iuran" siap.`);

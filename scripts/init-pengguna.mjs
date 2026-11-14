@@ -1,15 +1,6 @@
-import fs from "node:fs";
 import mysql from "mysql2/promise";
 import { ensureUsersRegion, USERS_TABLE_SQL } from "./users-region.mjs";
-
-// Muat .env.local bila ada (Node 20.12+)
-if (fs.existsSync(".env.local")) {
-  try {
-    process.loadEnvFile(".env.local");
-  } catch {
-    // abaikan, gunakan nilai default di bawah
-  }
-}
+import "./load-env.mjs";
 
 const DB_NAME = process.env.DB_NAME || "siwarga_v2";
 

@@ -16,3 +16,28 @@ body {
   background-color: #a7f3d0;
   color: #064e3b;
 }
+
+@media print {
+  @page {
+    margin: 12mm;
+  }
+
+  body {
+    background-color: #ffffff;
+  }
+
+  aside,
+  header,
+  nav {
+    display: none !important;
+  }
+
+  main {
+    max-width: none !important;
+    padding: 0 !important;
+  }
+
+  .lg\:pl-64 {
+    padding-left: 0 !important;
+  }
+}

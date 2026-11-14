@@ -1,0 +1,111 @@
+- generic [active] [ref=f12e1]:
+  - button "Open Next.js Dev Tools" [ref=f12e210] [cursor=pointer]
+  - alert [ref=f12e214]: Selamat datang, Uji
+  - generic [ref=f12e259]:
+    - complementary [ref=f12e260]:
+      - generic [ref=f12e263]:
+        - img "Logo SIWARGA" [ref=f12e265]
+        - generic [ref=f12e266]:
+          - generic [ref=f12e267]: SIWARGA
+          - generic [ref=f12e268]: Sistem Informasi Administrasi Warga
+      - navigation [ref=f12e270]:
+        - paragraph [ref=f12e271]: Menu utama
+        - link "Dashboard" [ref=f12e272] [cursor=pointer]:
+          - /url: /dashboard/warga
+        - link "Profil Saya" [ref=f12e278] [cursor=pointer]:
+          - /url: /dashboard/warga/profil
+        - link "Iuran Saya" [ref=f12e285] [cursor=pointer]:
+          - /url: /dashboard/warga/iuran
+        - generic "Segera hadir" [ref=f12e292]:
+          - generic [ref=f12e296]: Ajukan Layanan
+          - generic [ref=f12e297]: Segera
+        - generic "Segera hadir" [ref=f12e298]:
+          - generic [ref=f12e302]: Pengumuman
+          - generic [ref=f12e303]: Segera
+      - generic [ref=f12e305]:
+        - generic [ref=f12e306]:
+          - generic [ref=f12e307]: U
+          - generic [ref=f12e308]:
+            - paragraph [ref=f12e309]: Uji Pembayaran
+            - paragraph [ref=f12e310]: uji.bayar@siwarga.local
+            - paragraph [ref=f12e311]: RW 009 / RT 009
+        - button "Keluar" [ref=f12e313] [cursor=pointer]
+    - generic [ref=f12e317]:
+      - banner [ref=f12e318]:
+        - generic [ref=f12e319]:
+          - generic [ref=f12e321]:
+            - paragraph [ref=f12e322]: Dashboard
+            - paragraph [ref=f12e323]: Warga
+          - generic [ref=f12e324]:
+            - generic [ref=f12e325]: Warga
+            - generic [ref=f12e329]:
+              - generic [ref=f12e330]: U
+              - generic [ref=f12e331]:
+                - paragraph [ref=f12e332]: Uji Pembayaran
+                - paragraph [ref=f12e333]: uji.bayar@siwarga.local
+      - main [ref=f12e334]:
+        - generic [ref=f12e336]:
+          - generic [ref=f12e339]:
+            - generic [ref=f12e340]: Warga
+            - heading "Selamat datang, Uji" [level=1] [ref=f12e344]
+            - paragraph [ref=f12e345]: Akses layanan administrasi dan informasi lingkungan Anda dengan mudah lewat SIWARGA.
+            - generic [ref=f12e346]:
+              - generic [ref=f12e347]: Sabtu, 14 November 2026
+              - generic [ref=f12e352]: Selamat datang di lingkungan Anda
+          - generic [ref=f12e357]:
+            - generic [ref=f12e358]:
+              - generic [ref=f12e359]:
+                - generic [ref=f12e360]:
+                  - heading "Modul Warga" [level=2] [ref=f12e361]
+                  - paragraph [ref=f12e362]: Akses cepat ke modul SIWARGA sesuai hak akses Anda.
+                - generic [ref=f12e363]: 2 modul aktif
+              - generic [ref=f12e364]:
+                - link [ref=f12e366] [cursor=pointer]:
+                  - /url: /dashboard/warga/profil
+                  - generic [ref=f12e367]: Buka
+                  - heading "Profil Saya" [level=3] [ref=f12e375]
+                  - paragraph [ref=f12e376]: Lengkapi data diri dan kependudukan Anda.
+                - link [ref=f12e378] [cursor=pointer]:
+                  - /url: /dashboard/warga/iuran
+                  - generic [ref=f12e379]: Buka
+                  - heading "Iuran Saya" [level=3] [ref=f12e387]
+                  - paragraph [ref=f12e388]: Pantau tagihan dan kuitansi iuran lingkungan.
+                - generic [ref=f12e390]:
+                  - generic [ref=f12e391]: Segera
+                  - heading "Ajukan Layanan" [level=3] [ref=f12e397]
+                  - paragraph [ref=f12e398]: Ajukan surat dan layanan administrasi.
+                - generic [ref=f12e400]:
+                  - generic [ref=f12e401]: Segera
+                  - heading "Pengumuman" [level=3] [ref=f12e407]
+                  - paragraph [ref=f12e408]: Baca informasi terbaru dari pengurus.
+            - complementary [ref=f12e409]:
+              - generic [ref=f12e411]:
+                - heading "Informasi akun" [level=2] [ref=f12e412]
+                - generic [ref=f12e413]:
+                  - generic [ref=f12e414]: U
+                  - paragraph [ref=f12e415]: Uji Pembayaran
+                  - paragraph [ref=f12e416]: uji.bayar@siwarga.local
+                  - generic [ref=f12e417]: Warga
+                - generic [ref=f12e421]:
+                  - generic [ref=f12e422]:
+                    - term [ref=f12e423]: Status akun
+                    - definition [ref=f12e424]: Aktif
+                  - generic [ref=f12e426]:
+                    - term [ref=f12e427]: Hak akses
+                    - definition [ref=f12e428]: Warga
+                  - generic [ref=f12e429]:
+                    - term [ref=f12e430]: Wilayah
+                    - definition [ref=f12e431]: RW 009 / RT 009
+                  - generic [ref=f12e432]:
+                    - term [ref=f12e433]: Sistem
+                    - definition [ref=f12e434]: SIWARGA
+              - generic [ref=f12e441]:
+                - paragraph [ref=f12e442]: Sesi Anda aman
+                - paragraph [ref=f12e443]: Gunakan tombol Keluar setelah selesai agar akun tetap terlindungi.
+          - generic [ref=f12e445]:
+            - generic [ref=f12e446]:
+              - heading "Aktivitas terbaru" [level=2] [ref=f12e447]
+              - generic [ref=f12e448]: Belum ada data
+            - generic [ref=f12e449]:
+              - heading "Belum ada aktivitas" [level=3] [ref=f12e454]
+              - paragraph [ref=f12e455]: Ringkasan aktivitas dan data terbaru akan tampil di sini setelah modul SIWARGA mulai digunakan.

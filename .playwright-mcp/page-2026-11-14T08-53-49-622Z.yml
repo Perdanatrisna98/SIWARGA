@@ -1,0 +1,115 @@
+- generic [active] [ref=f10e1]:
+  - generic [ref=f10e2]:
+    - complementary [ref=f10e134]:
+      - generic [ref=f10e137]:
+        - img "Logo SIWARGA" [ref=f10e139]
+        - generic [ref=f10e140]:
+          - generic [ref=f10e141]: SIWARGA
+          - generic [ref=f10e142]: Sistem Informasi Administrasi Warga
+      - navigation [ref=f10e144]:
+        - paragraph [ref=f10e145]: Menu utama
+        - link "Dashboard" [ref=f10e146] [cursor=pointer]:
+          - /url: /dashboard/admin
+        - link "Manajemen Pengguna" [ref=f10e152] [cursor=pointer]:
+          - /url: /dashboard/admin/pengguna
+        - link "Data Warga" [ref=f10e160] [cursor=pointer]:
+          - /url: /dashboard/admin/warga
+        - link "Keuangan & Iuran" [ref=f10e168] [cursor=pointer]:
+          - /url: /dashboard/admin/keuangan
+        - generic "Segera hadir" [ref=f10e175]:
+          - generic [ref=f10e179]: Layanan Administrasi
+          - generic [ref=f10e180]: Segera
+      - generic [ref=f10e182]:
+        - generic [ref=f10e183]:
+          - generic [ref=f10e184]: A
+          - generic [ref=f10e185]:
+            - paragraph [ref=f10e186]: Administrator
+            - paragraph [ref=f10e187]: admin@siwarga.com
+        - button "Keluar" [ref=f10e189] [cursor=pointer]
+    - generic [ref=f10e40]:
+      - banner [ref=f10e41]:
+        - generic [ref=f10e42]:
+          - generic [ref=f10e50]:
+            - paragraph [ref=f10e51]: Dashboard
+            - paragraph [ref=f10e52]: Administrator
+          - generic [ref=f10e53]:
+            - generic [ref=f10e54]: Admin
+            - generic [ref=f10e58]:
+              - generic [ref=f10e59]: A
+              - generic [ref=f10e193]:
+                - paragraph [ref=f10e194]: Administrator
+                - paragraph [ref=f10e195]: admin@siwarga.com
+      - main [ref=f10e60]:
+        - generic [ref=f10e196]:
+          - generic [ref=f10e197]:
+            - link "Kembali ke Iuran" [ref=f10e198] [cursor=pointer]:
+              - /url: /dashboard/admin/iuran
+            - generic [ref=f10e201]:
+              - paragraph [ref=f10e202]: Keuangan & Iuran
+              - heading "Jenis Iuran" [level=1] [ref=f10e203]
+              - paragraph [ref=f10e204]: Atur jenis dan nominal iuran yang berlaku di wilayah Semua wilayah.
+          - status [ref=f10e206]:
+            - generic [ref=f10e209]: Jenis iuran berhasil ditambahkan.
+          - generic [ref=f10e210]:
+            - generic [ref=f10e212]:
+              - generic [ref=f10e213]:
+                - generic [ref=f10e214]:
+                  - heading "Informasi Jenis Iuran" [level=2] [ref=f10e215]
+                  - paragraph [ref=f10e216]: Jenis iuran menjadi acuan nominal saat membuat tagihan warga.
+                - generic [ref=f10e217]:
+                  - generic [ref=f10e218]:
+                    - generic [ref=f10e219]: Nama Iuran *
+                    - textbox "Nama Iuran *" [ref=f10e220]:
+                      - /placeholder: "Contoh: Iuran Kebersihan"
+                  - generic [ref=f10e221]:
+                    - generic [ref=f10e222]: Nominal per Warga *
+                    - spinbutton "Nominal per Warga *" [ref=f10e223]
+                  - generic [ref=f10e224]:
+                    - generic [ref=f10e225]: Periode *
+                    - combobox "Periode *" [ref=f10e226]:
+                      - option "Bulanan" [selected]
+                      - option "Sekali"
+                  - generic [ref=f10e227]:
+                    - checkbox "Iuran aktif" [checked] [ref=f10e228]
+                    - generic [ref=f10e229]:
+                      - text: Iuran aktif
+                      - paragraph [ref=f10e230]: Hanya jenis iuran aktif yang dapat dipakai untuk membuat tagihan.
+              - generic [ref=f10e231]:
+                - generic [ref=f10e232]:
+                  - heading "Cakupan Wilayah" [level=2] [ref=f10e233]
+                  - paragraph [ref=f10e234]: Tagihan hanya dibuat untuk warga aktif pada wilayah ini.
+                - generic [ref=f10e235]:
+                  - generic [ref=f10e236]:
+                    - generic [ref=f10e237]: RW *
+                    - textbox "RW *" [ref=f10e238]:
+                      - /placeholder: "002"
+                  - generic [ref=f10e239]:
+                    - generic [ref=f10e240]: RT
+                    - textbox "RT" [ref=f10e241]:
+                      - /placeholder: 001 (opsional untuk RW)
+                    - paragraph [ref=f10e242]: Kosongkan untuk cakupan seluruh RW.
+              - generic [ref=f10e243]:
+                - link "Batal" [ref=f10e244] [cursor=pointer]:
+                  - /url: /dashboard/admin/iuran
+                - button "Simpan Jenis Iuran" [ref=f10e245] [cursor=pointer]
+            - generic [ref=f10e248]:
+              - generic [ref=f10e249]:
+                - generic [ref=f10e250]:
+                  - heading "Daftar Jenis Iuran" [level=2] [ref=f10e251]
+                  - paragraph [ref=f10e252]: 1 jenis iuran terdaftar.
+                - link "Buat Tagihan" [ref=f10e253] [cursor=pointer]:
+                  - /url: /dashboard/admin/iuran/generate
+              - list [ref=f10e256]:
+                - listitem [ref=f10e257]:
+                  - generic [ref=f10e258]:
+                    - generic [ref=f10e259]:
+                      - paragraph [ref=f10e260]: Iuran Pembangunan Masjid (Uji)
+                      - generic [ref=f10e261]: Aktif
+                    - paragraph [ref=f10e262]: Rp 50.000 • Bulanan • RW 009 / RT 009
+                  - generic [ref=f10e263]:
+                    - button "Nonaktifkan" [ref=f10e265] [cursor=pointer]
+                    - link "Edit Iuran Pembangunan Masjid (Uji)" [ref=f10e266] [cursor=pointer]:
+                      - /url: /dashboard/admin/iuran/jenis/2/edit
+                    - button "Hapus" [ref=f10e269] [cursor=pointer]
+  - button "Open Next.js Dev Tools" [ref=f10e129] [cursor=pointer]
+  - alert [ref=f10e133]: Jenis Iuran

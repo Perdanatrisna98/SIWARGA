@@ -1,0 +1,29 @@
+- generic [active] [ref=f9e1]:
+  - main [ref=f9e3]:
+    - generic [ref=f9e4]:
+      - link "Logo SIWARGA SIWARGA" [ref=f9e6] [cursor=pointer]:
+        - /url: /
+        - generic [ref=f9e7]:
+          - img "Logo SIWARGA" [ref=f9e8]
+          - generic [ref=f9e9]: SIWARGA
+      - generic [ref=f9e12]:
+        - generic [ref=f9e13]:
+          - heading "Selamat Datang" [level=1] [ref=f9e14]
+          - paragraph [ref=f9e15]: Silakan masuk untuk mengakses layanan warga.
+        - generic [ref=f9e16]:
+          - generic [ref=f9e17]:
+            - generic [ref=f9e18]: Email
+            - textbox "Email" [ref=f9e20]:
+              - /placeholder: Masukkan Email
+          - generic [ref=f9e22]:
+            - generic [ref=f9e23]: Password
+            - generic [ref=f9e24]:
+              - textbox "Password" [ref=f9e25]:
+                - /placeholder: Masukkan password Anda
+              - button "Tampilkan password" [ref=f9e26] [cursor=pointer]
+          - button "Masuk Sekarang" [ref=f9e32] [cursor=pointer]
+        - paragraph [ref=f9e36]:
+          - text: Belum Punya Akun?
+          - link "Daftar di sini." [ref=f9e37] [cursor=pointer]:
+            - /url: /register
+  - button "Open Next.js Dev Tools" [ref=f9e43] [cursor=pointer]

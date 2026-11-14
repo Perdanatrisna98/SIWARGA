@@ -1,0 +1,131 @@
+- generic [active] [ref=f14e1]:
+  - generic [ref=f14e2]:
+    - complementary [ref=f14e3]:
+      - generic [ref=f14e6]:
+        - img "Logo SIWARGA" [ref=f14e8]
+        - generic [ref=f14e9]:
+          - generic [ref=f14e10]: SIWARGA
+          - generic [ref=f14e11]: Sistem Informasi Administrasi Warga
+      - navigation [ref=f14e13]:
+        - paragraph [ref=f14e14]: Menu utama
+        - link "Dashboard" [ref=f14e15] [cursor=pointer]:
+          - /url: /dashboard/admin
+        - link "Manajemen Pengguna" [ref=f14e21] [cursor=pointer]:
+          - /url: /dashboard/admin/pengguna
+        - link "Data Warga" [ref=f14e29] [cursor=pointer]:
+          - /url: /dashboard/admin/warga
+        - link "Keuangan & Iuran" [ref=f14e37] [cursor=pointer]:
+          - /url: /dashboard/admin/keuangan
+        - generic "Segera hadir" [ref=f14e44]:
+          - generic [ref=f14e48]: Layanan Administrasi
+          - generic [ref=f14e49]: Segera
+      - generic [ref=f14e51]:
+        - generic [ref=f14e52]:
+          - generic [ref=f14e53]: A
+          - generic [ref=f14e54]:
+            - paragraph [ref=f14e55]: Administrator
+            - paragraph [ref=f14e56]: admin@siwarga.com
+        - button "Keluar" [ref=f14e58] [cursor=pointer]
+    - generic [ref=f14e62]:
+      - banner [ref=f14e63]:
+        - generic [ref=f14e64]:
+          - generic [ref=f14e66]:
+            - paragraph [ref=f14e67]: Dashboard
+            - paragraph [ref=f14e68]: Administrator
+          - generic [ref=f14e69]:
+            - generic [ref=f14e70]: Admin
+            - generic [ref=f14e74]:
+              - generic [ref=f14e75]: A
+              - generic [ref=f14e76]:
+                - paragraph [ref=f14e77]: Administrator
+                - paragraph [ref=f14e78]: admin@siwarga.com
+      - main [ref=f14e79]:
+        - generic [ref=f14e81]:
+          - generic [ref=f14e83]:
+            - generic [ref=f14e84]:
+              - paragraph [ref=f14e85]: Keuangan & Iuran
+              - heading "Kelola Iuran & Verifikasi" [level=1] [ref=f14e86]
+              - paragraph [ref=f14e87]: Buat tagihan warga, verifikasi pembayaran, dan cetak kuitansi iuran secara otomatis.
+              - generic [ref=f14e88]: Semua wilayah
+            - generic [ref=f14e93]:
+              - link "Jenis Iuran" [ref=f14e94] [cursor=pointer]:
+                - /url: /dashboard/admin/iuran/jenis
+              - link "Buat Tagihan" [ref=f14e98] [cursor=pointer]:
+                - /url: /dashboard/admin/iuran/generate
+          - generic [ref=f14e102]:
+            - link "Kas" [ref=f14e103] [cursor=pointer]:
+              - /url: /dashboard/admin/keuangan
+            - generic [ref=f14e107]: Iuran & Verifikasi
+            - link "Jenis Iuran" [ref=f14e111] [cursor=pointer]:
+              - /url: /dashboard/admin/iuran/jenis
+          - generic [ref=f14e115]:
+            - generic [ref=f14e117]:
+              - generic [ref=f14e118]: "1"
+              - paragraph [ref=f14e124]: Total tagihan
+            - generic [ref=f14e126]:
+              - generic [ref=f14e127]: "0"
+              - paragraph [ref=f14e132]: Sudah lunas
+            - generic [ref=f14e134]:
+              - generic [ref=f14e135]: "1"
+              - paragraph [ref=f14e141]: Menunggu verifikasi
+            - generic [ref=f14e143]:
+              - generic [ref=f14e144]: "0"
+              - paragraph [ref=f14e150]: Belum dibayar
+            - generic [ref=f14e152]:
+              - generic [ref=f14e153]: Rp 0
+              - paragraph [ref=f14e159]: Tunggakan
+          - generic [ref=f14e162]:
+            - searchbox "Cari nama warga, NIK, atau jenis iuran..." [ref=f14e164]
+            - combobox "Filter status" [ref=f14e165]:
+              - option "Semua status" [selected]
+              - option "Belum dibayar"
+              - option "Menunggu verifikasi"
+              - option "Lunas"
+            - combobox "Filter jenis iuran" [ref=f14e166]:
+              - option "Semua jenis" [selected]
+              - option "Iuran Pembangunan Masjid (Uji)"
+            - textbox "Filter periode" [ref=f14e167]:
+              - /placeholder: Periode (2026-11)
+            - button "Filter" [ref=f14e169] [cursor=pointer]
+          - generic [ref=f14e171]:
+            - generic [ref=f14e172]:
+              - generic [ref=f14e173]:
+                - heading "Daftar Tagihan Iuran" [level=2] [ref=f14e174]
+                - paragraph [ref=f14e175]: 1 tagihan ditemukan.
+              - generic [ref=f14e176]: Semua wilayah
+            - table [ref=f14e178]:
+              - rowgroup [ref=f14e179]:
+                - row [ref=f14e180]:
+                  - columnheader "Warga" [ref=f14e181]
+                  - columnheader "Iuran" [ref=f14e182]
+                  - columnheader "Nominal" [ref=f14e183]
+                  - columnheader "Jatuh Tempo" [ref=f14e184]
+                  - columnheader "Status" [ref=f14e185]
+                  - columnheader "Aksi" [ref=f14e186]
+              - rowgroup [ref=f14e187]:
+                - row [ref=f14e188]:
+                  - cell [ref=f14e189]:
+                    - paragraph [ref=f14e190]: Uji Pembayaran
+                    - paragraph [ref=f14e191]: "9999999999999999"
+                    - paragraph [ref=f14e192]: RW 009 / RT 009
+                  - cell [ref=f14e193]:
+                    - paragraph [ref=f14e194]: Iuran Pembangunan Masjid (Uji)
+                    - paragraph [ref=f14e195]: Periode November 2026
+                  - cell "Rp 50.000" [ref=f14e196]
+                  - cell "28 Nov 2026" [ref=f14e197]
+                  - cell "Menunggu verifikasi Transfer Bank • 14 Nov 2026, 15.55 Lihat bukti" [ref=f14e198]:
+                    - generic [ref=f14e199]: Menunggu verifikasi
+                    - paragraph [ref=f14e200]: Transfer Bank • 14 Nov 2026, 15.55
+                    - link "Lihat bukti" [ref=f14e201] [cursor=pointer]:
+                      - /url: /uploads/bukti/37f840e4-814f-443e-adde-c49a44c1bbd9.png
+                  - cell [ref=f14e205]:
+                    - link "Periksa" [ref=f14e207] [cursor=pointer]:
+                      - /url: /dashboard/admin/iuran/2/verifikasi
+            - generic [ref=f14e211]:
+              - paragraph [ref=f14e212]: Halaman 1 dari 1
+              - generic [ref=f14e213]:
+                - link "Sebelumnya" [disabled]:
+                  - /url: /dashboard/admin/iuran
+                - link "Berikutnya" [disabled]:
+                  - /url: /dashboard/admin/iuran?page=2
+  - button "Open Next.js Dev Tools" [ref=f14e219] [cursor=pointer]

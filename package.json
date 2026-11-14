@@ -4,7 +4,6 @@
   "private": true,
   "scripts": {
     "dev": "next dev -H 0.0.0.0",
-    "dev:host" : "vite --host",
     "build": "next build",
     "start": "next start",
     "lint": "eslint",

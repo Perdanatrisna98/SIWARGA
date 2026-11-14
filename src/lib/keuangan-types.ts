@@ -41,6 +41,7 @@ export type KeuanganRecord = {
   rw: string;
   rt: string | null;
   created_by: number | null;
+  created_by_name?: string | null;
 };
 
 export type KeuanganStats = {
